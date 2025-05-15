@@ -7,7 +7,6 @@ from .serializers import Registerserializer, Loginserializer
 
 class RegisterView(APIView):
     def post(self, request):
-
         serializer = Registerserializer(data=request.data)
         if serializer.is_valid():
             user = serializer.save()

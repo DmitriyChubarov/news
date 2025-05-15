@@ -8,7 +8,7 @@ class User(AbstractUser):
    # groups = None
    # user_permissions = None
    # is_active = None
-   # is_superuser = None
+   # is_staff = None
    # last_login = None
    # date_joined = None
 
