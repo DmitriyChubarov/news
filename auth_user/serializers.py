@@ -5,6 +5,7 @@ from .func import create_user_in_serializer
 User = get_user_model()
 
 class Registerserializer(serializers.ModelSerializer):
+    '''Сериализатор для регистрации пользователя'''
     password = serializers.CharField(write_only=True)
 
     class Meta:
@@ -16,6 +17,7 @@ class Registerserializer(serializers.ModelSerializer):
         return create_user_in_serializer(username, password)
 
 class Loginserializer(serializers.Serializer):
+    '''Сериализатор для авторизации пользователя'''
     password = serializers.CharField(write_only=True)
     username = serializers.CharField()
 

@@ -6,6 +6,7 @@ from rest_framework.authtoken.models import Token
 from .serializers import Registerserializer, Loginserializer
 
 class RegisterView(APIView):
+    '''Вьюха регистрации пользователя'''
     def post(self, request):
         serializer = Registerserializer(data=request.data)
         if serializer.is_valid():
@@ -14,6 +15,7 @@ class RegisterView(APIView):
         return Response({'message': 'error'}, status=404)
 
 class LoginView(APIView):
+    '''Вьюха авторизации пользователя, создание/проверка и возврат токена'''
     def post(self,request):
         serializer = Loginserializer(data=request.data)
         if serializer.is_valid():

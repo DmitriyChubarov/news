@@ -3,6 +3,7 @@ from django.contrib.auth.models import AbstractUser
 from auth_user.models import User
 
 class News(models.Model):
+    '''Модель новости'''
     date = models.DateField(auto_now_add=True)
     title = models.CharField(max_length=255)
     content = models.TextField()
