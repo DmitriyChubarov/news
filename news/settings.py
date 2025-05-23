@@ -58,7 +58,7 @@ ROOT_URLCONF = 'news.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -82,8 +82,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'news',
-    'USER': 'news',
-    'PASSWORD': 'news',
+    'USER': 'postgres',
+    'PASSWORD': 'postgres',
     'HOST': 'localhost',
     'PORT': '5432',
     }

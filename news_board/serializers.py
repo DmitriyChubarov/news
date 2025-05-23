@@ -14,3 +14,8 @@ class NewsSerializerGET(serializers.ModelSerializer):
         model = News
         fields = '__all__'
 
+class NewsSerializerPUT(serializers.ModelSerializer):
+    '''Сериализатор для отправки PUT запроса на изменение новости'''
+    class Meta:
+        model = News
+        fields = ['title', 'content']

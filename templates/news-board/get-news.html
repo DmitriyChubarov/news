@@ -1,0 +1,9 @@
+<head>
+	<title>Список всех новостей</title>
+</head>
+<body>
+	<h2>Список всех новостей</h2>
+	{% for x in news %}
+	<p>{{x.title}} {{x.content}} {{x.author}}</p>
+	{% endfor %}
+</body>

@@ -1,0 +1,17 @@
+<head>
+	<title>Авторизация</title>
+</head>
+<body>
+	<h2>Страница авторизации</h2>
+	<form method='POST'>
+		{% csrf_token %}
+		<input type='text', name='username' required placeholder='Введите имя'>
+		<input type='password', name='password' required placeholder='Введите пароль'>
+		<button>Войти</button>
+		{%  if error %}
+			<p>{{error}}</p>
+		{%  endif %}
+</form>
+</body>
+
+

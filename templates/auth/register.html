@@ -1,0 +1,18 @@
+<head>
+	<title>Регистрация пользователя</title>
+</head>
+<body>
+	<h2>Регистрация пользователя</h2>
+	<form method='POST'>
+		{% csrf_token %}
+		<input type='text', name='username' required placeholder='Введите имя'>
+		<input type='password', name='password' required placeholder='Введите пароль'>
+		<button>Зарегистрироваться</button>
+	</form>
+
+	{% if error %}
+		<p>{{ error }}</p>
+	{%  endif %}
+</body>
+
+
