@@ -10,9 +10,11 @@ class NewsSerializerPOST(serializers.ModelSerializer):
 
 class NewsSerializerGET(serializers.ModelSerializer):
     '''Сериализатор для отправки GET запроса на получение всех новостей'''
+    author = serializers.CharField(source='author.username')
+
     class Meta:
         model = News
-        fields = '__all__'
+        fields = ['id', 'title', 'content', 'author']
 
 class NewsSerializerPUT(serializers.ModelSerializer):
     '''Сериализатор для отправки PUT запроса на изменение новости'''

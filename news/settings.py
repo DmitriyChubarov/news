@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'news_board',
     'auth_user',
+    'comments',
 ]
 
 MIDDLEWARE = [
@@ -128,6 +129,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 AUTH_USER_MODEL = 'auth_user.User'
+
+LOGOUT_REDIRECT_URL = 'login-html'
 
 REST_FRAMEWORK = {
         'DEFAULT_PERMISSION_CLASSES':[

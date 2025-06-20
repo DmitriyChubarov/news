@@ -1,0 +1,24 @@
+<head>
+	<title>Создание новости</title>
+</head>
+<body>
+	<h2>Создание новости</h2>
+	<form method='POST'>
+		{% csrf_token %}
+		<input type='text', name='title' required placeholder='Введите заголовок'>
+		<input type='text', name='content' required placeholder='Введите основной текст'>
+		<button>Создать</button>
+	</form>
+	{% if response %}
+		<p>Номер новости: {{ response.id }}</p>
+		<p>Заголовок новости: {{ response.title }}</p>
+		<p>Тело новости: {{ response.content }}</p>
+		<p>Автор новости: {{ response.author }}</p>
+	{%  endif %}
+
+	{% if error %}
+		<p>{{ error }}</p>
+	{%  endif %}
+</body>
+
+

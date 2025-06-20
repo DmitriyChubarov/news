@@ -3,7 +3,23 @@
 </head>
 <body>
 	<h2>Список всех новостей</h2>
+	<p><a href='{% url 'main-auth-html' %}'>На главную</a></p>
 	{% for x in news %}
-	<p>{{x.title}} {{x.content}} {{x.author}}</p>
+	<p>------------------------------------</p>
+	<p>Номер новости: {{x.id}}</p>
+	<p>Заголовок: {{x.title}}</p>
+	<p>Основной текст: {{x.content}}</p>
+	<p>Автор: {{x.author}}</p>
+	{% if request.user.username == x.author or request.user.is_staff %}	
+		<form method='POST' action='{% url 'delete-news-html' x.id %}'>	
+			{% csrf_token %}
+			<button type='submit'>Удалить</button>
+		</form>
+		<form method='GET' action='{% url 'edit-news-html' x.id %}'>
+			{% csrf_token %}
+			<button type='submit'>Изменить</button>
+		</form>
+	{% endif %}
+	<p>------------------------------------</p>
 	{% endfor %}
 </body>

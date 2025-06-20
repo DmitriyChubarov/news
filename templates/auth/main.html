@@ -1,0 +1,15 @@
+<head>
+	<title>Главная страница</title>
+</head>
+<body>
+	{% if user.is_authenticated %}
+		<h2>Авторизован: {{ request.user.username }} </h2>
+		<p><a href="{% url 'get-news-html' %}">Новости</a></p>
+		<p><a href="{% url 'create-news-html' %}">Создать новость</a></p>
+		<p><a href="{% url 'logout' %}">Выход</a></p>
+	{%  else %}
+		<h2>Не авторизован</h2>
+		<p><a href="{% url 'register-html' %}">Регистрация</a></p>
+		<p><a href="{% url 'login-html' %}">Вход</a></p>
+	{% endif%}
+</body>

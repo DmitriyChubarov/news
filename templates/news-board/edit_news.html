@@ -1,0 +1,12 @@
+<head>
+	<title>Изменение новостей</title>
+</head>
+<body>
+	<h2>Изменить новость </h2>
+	<form method='POST' action='{% url 'edit-news-html' pk %}'>
+		{% csrf_token %}
+		<input type='text' name='title' required placeholder='Введите заголовок'>
+		<input type='text' name='content' required placeholder='Введите текст новости'>
+		<button type='submit'>Изменить</button>
+	</form><br><br>
+</body>
