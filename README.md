@@ -26,6 +26,6 @@
  - PATCH news (обновляем новость, проерка на атворизацию, проверка на наличие прав) <img src="https://cdn-icons-png.flaticon.com/512/14090/14090371.png" alt="галочка" width="16" style="vertical-align: middle;">
  - DELETE news (удаляем новость, проверка на авторизацию, проверка на наличие прав) <img src="https://cdn-icons-png.flaticon.com/512/14090/14090371.png" alt="галочка" width="16" style="vertical-align: middle;">
  - GET comments (получение списка комментариев новости с пагинацией)
- - POST comments (создание нового комментария, проверка на авторизацию)
- - DELETE comments   Админка
+ - POST comments (создание нового комментария, проверка на авторизацию)<img src="https://cdn-icons-png.flaticon.com/512/14090/14090371.png" alt="галочка" width="16" style="vertical-align: middle;">
+ - DELETE comments<img src="https://cdn-icons-png.flaticon.com/512/14090/14090371.png" alt="галочка" width="16" style="vertical-align: middle;">
  - Нужна стандартная админка Django (пользователи админки могут не пересекаться с пользователями в таблице Users)
